@@ -4,5 +4,6 @@
   "description": "DOM Walker",
   "license": "MIT",
   "main": "index.js",
+  "repo": "alexeyraspopov/dom-walker",
   "author": "Alexey Raspopov (https://github.com/alexeyraspopov)"
 }

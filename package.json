@@ -4,6 +4,7 @@
   "description": "DOM Walker",
   "license": "MIT",
   "main": "index.js",
+  "repository": "alexeyraspopov/dom-walker",
   "author": "Alexey Raspopov (https://github.com/alexeyraspopov)",
   "devDependencies": {
     "jshint-stylish": "^0.1.5",
@@ -17,6 +18,8 @@
     "karma-firefox-launcher": "^0.1.3",
     "karma-ie-launcher": "^0.1.5",
     "browserify": "^3.44.1",
-    "karma-browserify": "^0.2.0"
+    "karma-browserify": "^0.2.0",
+    "gulp-wrap-exports": "^0.2.0",
+    "gulp-rename": "^1.2.0"
   }
 }
