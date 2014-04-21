@@ -20,7 +20,9 @@ $ bower install dom-walker
  * `process` - processing function
    * `node` - current node
    * `next` - iterator function (go to next node)
-     * `direction` (optional) - which node should be next
+     * `direction` (optional) - which node should be next (`'node'` by default).
+       * `'node'` calls `treeWalker.nextNode()`
+       * `'sibling'` calls `treeWalker.nextSibling()`
  * `options` (optional)
    * `acceptNode` - [TreeWalker filter function](https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker.filter). Accept all elements by default
    * `whatToShow` - [TreeWalker option](https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker.whatToShow). `NodeFilter.SHOW_ELEMENT` by default
