@@ -9,11 +9,13 @@ function createTreeWalker(root, acceptNode, whatToShow){
 }
 
 module.exports = function(root, process, options){
+	options = options || {};
+
 	var walker = createTreeWalker(root, options.acceptNode, options.whatToShow),
 		node = walker.currentNode;
 
 	function next(node){
-		process(node, iterator);
+		return node && process(node, iterator);
 	}
 
 	function iterator(direction){
