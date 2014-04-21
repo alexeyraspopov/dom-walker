@@ -8,34 +8,29 @@ function createTreeWalker(root, acceptNode, whatToShow){
 	return document.createTreeWalker(root, whatToShow, { acceptNode: acceptNode }, false);
 }
 
-module.exports = function(root, process, options){
-	options = options || {};
+function createIterator(walker, next){
+	return function(direction){
+		switch(direction){
+			case 'sibling':
+				return next(walker.nextSibling());
+			case 'node':
+				/* falls through */
+			default:
+				return next(walker.nextNode());
+		}
+	};
+}
 
-	var walker = createTreeWalker(root, options.acceptNode, options.whatToShow),
-		node = walker.currentNode;
+module.exports = function(root, process, options){
+	var walker, iterator;
+
+	options = options || {};
+	walker = createTreeWalker(root, options.acceptNode, options.whatToShow);
+	iterator = createIterator(walker, next);
 
 	function next(node){
 		return node && process(node, iterator);
 	}
 
-	function iterator(direction){
-		switch(direction){
-			case 'sibling':
-				return nextSibling();
-			case 'node':
-				/* falls through */
-			default:
-				return nextNode();
-		}
-	}
-
-	function nextNode(){
-		next(walker.nextNode());
-	}
-
-	function nextSibling(){
-		next(walker.nextSibling());
-	}
-
-	next(node);
+	next(walker.currentNode);
 };
