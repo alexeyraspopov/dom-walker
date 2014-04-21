@@ -5,10 +5,6 @@ DOM Walker
 ## Install
 
 ```bash
-$ npm install dom-walker
-```
-
-```bash
 $ component install alexeyraspopov/dom-walker
 ```
 
@@ -18,11 +14,11 @@ $ bower install dom-walker
 
 ## API
 
-TBD
+	walk(root, process, options);
 
 ## Usage
 
-TBD
+	var walk = require('dom-walker');
 
 ## License
 

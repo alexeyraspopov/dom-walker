@@ -9,28 +9,27 @@ function createTreeWalker(root, acceptNode, whatToShow){
 }
 
 function createIterator(walker, next){
-	return function(direction){
+	return function iterator(direction){
 		switch(direction){
 			case 'sibling':
-				return next(walker.nextSibling());
+				return next(walker.nextSibling(), iterator);
 			case 'node':
 				/* falls through */
 			default:
-				return next(walker.nextNode());
+				return next(walker.nextNode(), iterator);
 		}
 	};
 }
 
 module.exports = function(root, process, options){
-	var walker, iterator;
+	var walker;
 
 	options = options || {};
 	walker = createTreeWalker(root, options.acceptNode, options.whatToShow);
-	iterator = createIterator(walker, next);
 
-	function next(node){
+	function next(node, iterator){
 		return node && process(node, iterator);
 	}
 
-	next(walker.currentNode);
+	next(walker.currentNode, createIterator(walker, next));
 };
