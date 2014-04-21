@@ -1,0 +1,8 @@
+{
+  "name": "dom-walker",
+  "version": "0.0.1",
+  "description": "DOM Walker",
+  "license": "MIT",
+  "main": "index.js",
+  "author": "Alexey Raspopov (https://github.com/alexeyraspopov)"
+}
