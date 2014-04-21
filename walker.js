@@ -12,14 +12,9 @@ function createTreeWalker(root, acceptNode, whatToShow){
 
 function createIterator(walker, next){
 	return function iterator(direction){
-		switch(direction){
-			case 'sibling':
-				return next(walker.nextSibling(), iterator);
-			case 'node':
-				/* falls through */
-			default:
-				return next(walker.nextNode(), iterator);
-		}
+		var node = direction === 'sibling' ? walker.nextSibling() : walker.nextNode();
+
+		return next(node, iterator);
 	};
 }
 
