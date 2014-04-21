@@ -1,12 +1,12 @@
 {
   "name": "dom-walker",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "DOM Walker",
   "license": "MIT",
   "main": "index.js",
   "author": "Alexey Raspopov (https://github.com/alexeyraspopov)",
   "moduleType": [
-  	"globals",
+    "globals",
     "node"
   ]
 }
