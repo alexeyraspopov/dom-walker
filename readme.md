@@ -5,15 +5,15 @@ DOM Walker
 ## Install
 
 ```bash
-npm install dom-walker
+$ npm install dom-walker
 ```
 
 ```bash
-component install alexeyraspopov/dom-walker
+$ component install alexeyraspopov/dom-walker
 ```
 
 ```bash
-bower install dom-walker
+$ bower install dom-walker
 ```
 
 ## API
